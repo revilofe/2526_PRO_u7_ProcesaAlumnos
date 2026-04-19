@@ -2,6 +2,11 @@ package org.iesra.procesaalumnos
 
 import kotlin.io.path.Path
 
+/**
+ * Punto de entrada de la versión simple del ejercicio.
+ *
+ * Lee los argumentos, ejecuta el procesamiento y muestra un resumen por consola.
+ */
 fun main(args: Array<String>) {
     val options = parseArgs(args)
     val summary = StudentProcessor().process(options.group, options.path)
@@ -21,6 +26,13 @@ fun main(args: Array<String>) {
     }
 }
 
+/**
+ * Convierte los argumentos de línea de comandos en una estructura tipada.
+ *
+ * @param args argumentos recibidos por `main`.
+ * @return opciones mínimas necesarias para ejecutar el programa.
+ * @throws IllegalStateException si falta `--grupo` o si una opción no tiene valor.
+ */
 private fun parseArgs(args: Array<String>): CliOptions {
     var group: String? = null
     var path = Path(".")
@@ -44,4 +56,10 @@ private fun parseArgs(args: Array<String>): CliOptions {
     return CliOptions(group ?: error("La opción --grupo es obligatoria"), path)
 }
 
+/**
+ * Opciones de la ejecución desde línea de comandos.
+ *
+ * @property group identificador del curso, por ejemplo `DAW1`.
+ * @property path directorio donde se buscarán los ficheros de entrada.
+ */
 data class CliOptions(val group: String, val path: java.nio.file.Path)
