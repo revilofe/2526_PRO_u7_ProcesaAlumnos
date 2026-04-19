@@ -1,0 +1,4 @@
+Nombre: Javier
+Apellidos: Ruiz Gomez
+email: jruiz777@g.educaand.es
+Grupo = C
