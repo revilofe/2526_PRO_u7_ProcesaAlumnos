@@ -32,6 +32,31 @@ El programa debe leer todos los ficheros del directorio indicado y realizar este
 7. Mover cada fichero procesado a una carpeta llamada `procesados`.
 8. Mostrar por salida estándar un resumen del procesamiento.
 
+## Diagrama de flujo
+
+```mermaid
+flowchart TD
+    A["Inicio del programa"] --> B["Leer argumentos<br/>grupo y ruta"]
+    B --> C["Localizar ficheros .txt"]
+    C --> D{"Quedan ficheros<br/>por procesar?"}
+    D -- "Sí" --> E["Leer y validar fichero"]
+    E --> F{"Formato correcto?"}
+    F -- "No" --> G["Registrar incidencia"]
+    G --> H["Mover fichero a<br/>procesados"]
+    F -- "Sí" --> I["Generar correo del instituto"]
+    I --> J{"Grupo solicitado válido<br/>y con plazas?"}
+    J -- "Sí" --> K["Asignar al grupo solicitado"]
+    J -- "No" --> L["Buscar grupo con plazas<br/>o crear nuevo grupo"]
+    K --> M["Añadir a correos y grupos"]
+    L --> M
+    M --> H
+    H --> D
+    D -- "No" --> N["Generar fichero CSV de correos"]
+    N --> O["Generar fichero TXT de grupos"]
+    O --> P["Mostrar resumen por consola"]
+    P --> Q["Fin"]
+```
+
 ## Descripción del comando
 
 El programa se llamará `procesa-alumnos` y se ejecuta desde línea de comandos y acepta estas opciones:
