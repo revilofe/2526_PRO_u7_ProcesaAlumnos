@@ -165,6 +165,9 @@ Representa un fichero de entrada.
 Se entrega para mostrar que en orientación a objetos también podemos modelar
 elementos del sistema, no solo personas o grupos.
 
+En esta base se entrega como referencia conceptual.
+Todavía no se usa de forma real en la ejecución del programa.
+
 ### Interfaces de `domain/port`
 
 Estas interfaces aparecen como **borrador de responsabilidades futuras**.
@@ -251,9 +254,9 @@ classDiagram
     StudentProcessingApplication ..> InstitutionalEmailGenerator : colaborador futuro
     StudentProcessingApplication ..> GroupAssigner : colaborador futuro
     StudentProcessingApplication ..> OutputWriter : colaborador futuro
-    StudentProcessingApplication --> StudentFile : trabaja con
-    StudentProcessingApplication --> FileIssue : registra
-    StudentProcessingApplication --> ProcessingSummary : construye
+    StudentProcessingApplication ..> StudentFile : modelo futuro
+    StudentProcessingApplication ..> FileIssue : modelo futuro
+    StudentProcessingApplication ..> ProcessingSummary : resultado futuro
     ProcessingSummary --> FileIssue : contiene
 ```
 
@@ -277,6 +280,12 @@ sequenceDiagram
     App->>App: Explicar el esqueleto del flujo
     App-->>Usuario: Mensajes por consola
 ```
+
+Importante:
+
+- el diagrama de clases mezcla elementos ya usados con otros que solo están
+  entregados como referencia
+- las flechas discontinuas indican ideas de colaboración futura, no uso real actual
 
 ## Por qué hay tantas interfaces
 
