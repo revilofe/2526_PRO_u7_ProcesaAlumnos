@@ -1,27 +1,21 @@
 package org.iesra.procesaalumnos.application
 
 import org.iesra.procesaalumnos.cli.CliOptions
-import org.iesra.procesaalumnos.domain.model.FileIssue
-import org.iesra.procesaalumnos.domain.model.ProcessingSummary
-import org.iesra.procesaalumnos.domain.model.StudentFile
-import java.nio.file.Path
 
 /**
  * Coordina el caso de uso principal del programa.
  *
- * En una solución orientada a objetos, esta clase actúa como orquestador:
- * no hace necesariamente todo el trabajo por sí sola, sino que delega en
- * otros objetos especializados.
+ * En esta base didáctica se comporta como orquestador: recibe los datos de entrada
+ * ya parseados y explica cómo se podría repartir el trabajo entre otros objetos.
  *
- * Aquí solo dejamos implementado el arranque y el esqueleto comentado del flujo.
+ * Importante: en la rama `main` todavía no depende de implementaciones reales ni de
+ * interfaces con métodos, porque la intención aquí es enseñar la estructura antes
+ * de construir la solución completa.
  */
 class StudentProcessingApplication {
 
     /**
      * Ejecuta el flujo principal del programa.
-     *
-     * En esta base didáctica solo mostramos el parseo de parámetros ya resuelto
-     * y dejamos el resto del proceso preparado como guía.
      *
      * @param options opciones recibidas desde la línea de comandos.
      */
@@ -29,12 +23,13 @@ class StudentProcessingApplication {
         println("Grupo recibido: ${options.group}")
         println("Directorio de trabajo: ${options.path}")
 
-        // A partir de aquí, una solución OO razonable podría seguir este flujo:
+        // A partir de aquí, una solución OO razonable podría seguir este flujo.
+        // En esta rama base no se implementa todavía: solo se deja la guía.
 
-        // 1. Pedir a un repositorio de ficheros que localice los `.txt` de entrada.
+        // 1. Pedir a una clase repositorio que localice los `.txt` de entrada.
         // val inputFiles = studentFileRepository.findInputFiles(options.path)
 
-        // 2. Crear una colección donde guardar alumnado válido e incidencias.
+        // 2. Crear colecciones donde guardar alumnado válido e incidencias.
         // val students = mutableListOf<Student>()
         // val issues = mutableListOf<FileIssue>()
 
@@ -73,8 +68,7 @@ class StudentProcessingApplication {
     /**
      * Muestra por consola una posible descomposición del problema en objetos.
      *
-     * Esta salida sirve como guía para el alumnado: no es parte de la solución
-     * final, sino una ayuda para entender cómo repartir responsabilidades.
+     * Esta salida sirve como orientación y no forma parte de la solución final.
      */
     private fun printSuggestedDesign() {
         println()
@@ -86,20 +80,4 @@ class StudentProcessingApplication {
         println("- OutputWriter: escribe los ficheros CSV y TXT.")
         println("- SummaryPrinter: muestra el resumen final.")
     }
-
-    // Los siguientes métodos no se implementan todavía.
-    // Se dejan como referencia para que el alumnado vea qué responsabilidades
-    // podrían existir en una solución orientada a objetos.
-
-    private fun findInputFiles(directory: Path): List<StudentFile> = emptyList()
-
-    private fun registerIssue(fileName: String, message: String): FileIssue =
-        FileIssue(fileName, message)
-
-    private fun buildSummary(): ProcessingSummary =
-        ProcessingSummary(
-            detectedFiles = 0,
-            validStudents = 0,
-            issues = emptyList(),
-        )
 }

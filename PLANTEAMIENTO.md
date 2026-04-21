@@ -132,6 +132,55 @@ Su misión es parecida a la de un director de orquesta:
 - no toca todos los instrumentos
 - pero sabe cuándo debe intervenir cada uno
 
+En esta base **no usa todavía** las interfaces de `domain/port`.
+
+Eso es intencionado y evita una incoherencia importante:
+
+- las interfaces se entregan como guía de diseño
+- todavía no tienen métodos
+- todavía no tienen clases que las implementen
+
+Por tanto, la aplicación principal no debe depender aún de ellas para funcionar.
+
+Primero se entiende el reparto de responsabilidades.
+Después se implementan las clases concretas.
+
+### `FileIssue`
+
+Es una clase de datos sencilla para representar un problema detectado durante el procesamiento.
+
+Se entrega para que veas que los errores también se pueden modelar como objetos.
+
+### `ProcessingSummary`
+
+Es una clase de datos que representa la idea de "resumen final".
+
+Aunque en la base no se construye todavía un resumen real, sirve para enseñar
+que el resultado de un proceso también puede representarse con un objeto.
+
+### `StudentFile`
+
+Representa un fichero de entrada.
+
+Se entrega para mostrar que en orientación a objetos también podemos modelar
+elementos del sistema, no solo personas o grupos.
+
+### Interfaces de `domain/port`
+
+Estas interfaces aparecen como **borrador de responsabilidades futuras**.
+
+En esta base:
+
+- no se usan todavía desde `main`
+- no tienen métodos todavía
+- no tienen implementaciones todavía
+
+Su función es pedagógica:
+
+- ayudarte a imaginar qué piezas podrían existir en una solución completa
+- ayudarte a no meter toda la lógica en una sola clase
+- mostrar que cada responsabilidad importante podría terminar en una clase distinta
+
 ## Diagramas
 
 ### Diagrama de clases
@@ -197,11 +246,11 @@ classDiagram
     Main --> StudentProcessingApplication : crea
     CommandLineParser --> CliOptions : devuelve
     StudentProcessingApplication --> CliOptions : recibe
-    StudentProcessingApplication --> StudentFileRepository : colaborador futuro
-    StudentProcessingApplication --> StudentParser : colaborador futuro
-    StudentProcessingApplication --> InstitutionalEmailGenerator : colaborador futuro
-    StudentProcessingApplication --> GroupAssigner : colaborador futuro
-    StudentProcessingApplication --> OutputWriter : colaborador futuro
+    StudentProcessingApplication ..> StudentFileRepository : colaborador futuro
+    StudentProcessingApplication ..> StudentParser : colaborador futuro
+    StudentProcessingApplication ..> InstitutionalEmailGenerator : colaborador futuro
+    StudentProcessingApplication ..> GroupAssigner : colaborador futuro
+    StudentProcessingApplication ..> OutputWriter : colaborador futuro
     StudentProcessingApplication --> StudentFile : trabaja con
     StudentProcessingApplication --> FileIssue : registra
     StudentProcessingApplication --> ProcessingSummary : construye
@@ -316,6 +365,101 @@ Puedes pensar simplemente esto:
 - `port` = "interfaces del proyecto"
 
 No necesitas saber más para empezar.
+
+## Una duda importante: por qué los `port` están vacíos
+
+Ahora mismo, en la base del proyecto, los `port` aparecen como interfaces sin métodos.
+
+Eso está hecho así a propósito para que primero se entienda la idea general:
+
+- hay distintas responsabilidades
+- cada responsabilidad podría vivir en una clase distinta
+- la aplicación principal no debería hacerlo todo
+
+Pero técnicamente, si quieres usar de verdad una interfaz, esa interfaz normalmente
+debe declarar **qué operaciones ofrece**.
+
+Dicho de forma sencilla:
+
+- una interfaz vacía solo señala que "aquí debería haber una pieza del sistema"
+- una interfaz con métodos ya define "qué puede hacer esa pieza"
+
+Por tanto, sí:
+
+- en una solución más avanzada
+- o en una siguiente fase del ejercicio
+
+lo normal sería que esos `port` tuvieran métodos.
+
+Pero no hace falta que ya los tengan en esta base para que el planteamiento tenga sentido.
+
+Aquí se entregan vacíos de manera intencionada para no adelantarte la forma concreta
+de resolver cada parte del ejercicio.
+
+## Entonces, para qué sirven ahora
+
+Sirven como guía de diseño.
+
+Te ayudan a responder preguntas como estas:
+
+- ¿quién debería leer los ficheros?
+- ¿quién debería interpretar un fichero y convertirlo en un objeto?
+- ¿quién debería generar el correo del instituto?
+- ¿quién debería decidir el grupo final?
+- ¿quién debería escribir los ficheros de salida?
+
+Aunque todavía no tengan métodos, ya te están marcando que esas tareas
+no deberían estar mezcladas dentro de una sola clase enorme.
+
+## Qué pasará más adelante
+
+Cuando empieces a implementar de verdad cada parte, tendrás que decidir:
+
+- qué necesita hacer cada objeto
+- qué información necesita recibir
+- qué resultado debe devolver
+
+Y en ese momento aparecerán los métodos de cada interfaz.
+
+Por ejemplo, sin entrar en la solución concreta, cada `port` acabará necesitando
+alguna operación relacionada con su responsabilidad:
+
+- el de ficheros tendrá operaciones de trabajo con ficheros
+- el de parseo tendrá operaciones de interpretación de datos
+- el de grupos tendrá operaciones de asignación
+- el de salida tendrá operaciones de escritura
+
+La idea importante no es memorizar esos métodos ahora, sino entender que:
+
+> primero identificas responsabilidades, después defines operaciones
+
+## Qué no debes hacer
+
+No conviene definir métodos al azar solo por "rellenar" la interfaz.
+
+Primero hay que tener claro:
+
+- qué responsabilidad tiene esa pieza
+- qué necesita el resto del programa de ella
+
+Si no, acabarás creando métodos que luego no encajan bien o que mezclan varias tareas.
+
+## Regla sencilla para pensar un `port`
+
+Hazte esta pregunta:
+
+> Si esta pieza fuese un objeto real del programa, ¿qué tendría que saber hacer?
+
+La respuesta a esa pregunta suele convertirse más adelante en uno o varios métodos.
+
+## Qué debes entender como alumno en este punto
+
+En esta fase del proyecto basta con que te quedes con estas ideas:
+
+- los `port` no están para complicar
+- los `port` representan responsabilidades separadas
+- una interfaz vacía puede servir como borrador del diseño
+- cuando la implementación avance, esas interfaces deberán concretarse con métodos
 
 ## Patrones que aparecen aquí, explicados fácil
 
