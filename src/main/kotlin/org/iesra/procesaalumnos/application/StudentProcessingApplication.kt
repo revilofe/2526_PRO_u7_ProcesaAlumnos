@@ -26,6 +26,8 @@ class StudentProcessingApplication {
         // A partir de aquí, una solución OO razonable podría seguir este flujo.
         // En esta rama base no se implementa todavía: solo se deja la guía.
 
+        // ## Lectura de datos, conversión a estructuras
+
         // 1. Pedir a una clase repositorio que localice los `.txt` de entrada.
         // val inputFiles = studentFileRepository.findInputFiles(options.path)
 
@@ -37,26 +39,33 @@ class StudentProcessingApplication {
         // for (file in inputFiles) {
         //     val student = studentParser.parse(file)
         //     ...
+               // 4. Si el parser detecta errores, guardar incidencias.
+               // issues.add(FileIssue(...))
+
+               // 5. Si el parser obtiene un alumno correcto, guardarlo como objeto `Student`.
+               // students.add(student)
+
+               // 6. Delegar el movimiento a `procesados` a un repositorio o gestor de ficheros.
+               // studentFileRepository.moveToProcessed(file)
+
+
         // }
 
-        // 4. Si el parser detecta errores, guardar incidencias.
-        // issues.add(FileIssue(...))
+        // ## Procesamiento de datos de entrada, y generación de datos de salida
 
-        // 5. Si el parser obtiene un alumno correcto, guardarlo como objeto `Student`.
-        // students.add(student)
-
-        // 6. Delegar la generación del correo del instituto a otra clase.
+        // 7. Para cada Student, delegar la generación del correo del instituto a otra clase.
         // val institutionalEmail = emailGenerator.generate(student)
 
-        // 7. Delegar la asignación de grupos a una clase especializada.
+        // 8. Para cada Student, delegar la asignación de grupos a una clase especializada.
         // val assignment = groupAssigner.assign(student, currentGroups)
 
-        // 8. Delegar la escritura de ficheros de salida a un escritor.
+        // ## Generar ficheros de salida
+
+        // 9. Delegar la escritura de ficheros de salida a un escritor.
         // outputWriter.writeEmails(...)
         // outputWriter.writeGroups(...)
 
-        // 9. Delegar el movimiento a `procesados` a un repositorio o gestor de ficheros.
-        // studentFileRepository.moveToProcessed(file)
+        // ## Generar resumen
 
         // 10. Finalmente, construir un resumen y mostrarlo por consola.
         // val summary = ProcessingSummary(...)
