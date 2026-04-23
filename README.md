@@ -14,9 +14,9 @@ Cada alumno entrega un fichero de texto con nombre igual a la parte local de su 
 Ejemplo de fichero de entrada:
 
 ```text
-Nombre: Eduardo
-Apellidos: Fernández Oliver
-email: eferoli398@g.educaand.es
+Nombre: Jon
+Apellidos: Solido Derret
+email: jSolDer398@g.educaand.es
 Grupo = A
 ```
 
@@ -88,12 +88,12 @@ procesa-alumnos --grupo DAW1 --path ./datos/alumnos
 
 ### Ejemplo 1: alumno con grupo informado
 
-Archivo: `eferoli398.txt`
+Archivo: `jSolDer398.txt`
 
 ```text
-Nombre: Eduardo
-Apellidos: Fernández Oliver
-email: eferoli398@g.educaand.es
+Nombre: Jon
+Apellidos: Solido Derret
+email: jSolDer398@g.educaand.es
 Grupo = A
 ```
 
@@ -127,8 +127,8 @@ Archivo: `DAW1-correos.csv`
 
 ```text
 nombre|apellidos|email1|email2
-Eduardo|Fernández Oliver|eferoli398@g.educaand.es|eoliverr@iesrafaelalberti.es
-Marta|López Pérez|mlopez123@g.educaand.es|mperezr@iesrafaelalberti.es
+Jon|Solido Derret|jsolder398@g.educaand.es|jderrete@iesrafaelalberti.es
+Marta|López Pérez|mlopez123@g.educaand.es|mpereze@iesrafaelalberti.es
 Javier|Ruiz Gómez|jruiz777@g.educaand.es|jgomezo@iesrafaelalberti.es
 ```
 
@@ -138,7 +138,7 @@ Archivo: `DAW1-grupos.txt`
 
 ```text
 [Grupo-A]
-- Eduardo Fernández Oliver
+- Jon Solido Derret
 - Lucía Moreno Gil
 - Pablo Torres Díaz
 
@@ -189,3 +189,20 @@ Este ejercicio está orientado a evaluar resultados de aprendizaje relacionados 
 - Gestión de rutas y directorios.
 - Movimiento de ficheros una vez procesados.
 - Comunicación de resultados e incidencias por salida estándar.
+
+## Preguntas: COMPLEMENTA LAS PREGUNTAS CON ENLACES A CÓDIGO, UTILIZANDO ENLACES PERMANENTES DE GITHUB.
+
+[CE 7.a] 1.a. Describe cómo se ha implementado la lectura de datos desde la consola y la escritura de resultados por consola. Pon ejemplos de código (enlace permanente al código en GitHub).
+[CE 7.b] 2.a. Describe cómo se ha implementado la visualización de la información por consola ¿como le has dado formato.? Pon ejemplos de código (enlace permanente al código en GitHub).
+[CE 7.c] 3.a ¿Que librería/clases has utilizado para realizar la práctica? Comenta los métodos mas interesantes
+[CE 7.d] 4.a ¿Que formato le has utilizado en los ficheros de entrda y salida recuperar y guardar la información respectivamente? 4.b ¿Que facilidades te ha dado tener un determinado  formato adaptado? 4.c ¿Cómo se gestionan los errores? Pon ejemplos de código (enlace permanente al código en GitHub).
+[CE 7.e] 5.a Describe la forma de acceso para leer información 6.b Describe la forma de acceso para escribir información 6.c Describe la forma de acceso para actualizar información. Pon ejemplos de código (enlace permanente al código en GitHub).
+
+
+## Entrega
+El ejercicio se entregará a través de un repositorio de GitHub. El repositorio debe incluir: 
+- El código fuente de la aplicación, que debe ser funcional.
+- RESULTADO.md con:
+   - las respuestas a las preguntas de evaluación, usando enlaces permanente al código utilizado para responder las preguntas de evaluación.
+   - Ejemplos de ejecución
+   - Ejemplos a los ficheros de salida tras ejecutar tu programa.
