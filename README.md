@@ -1,8 +1,11 @@
-# Procesa Alumnos
+# Acti
 
-Aplicación de consola para procesar ficheros de alumnado y automatizar la creación de correos internos y la asignación de grupos del instituto.
+> Toda la documentación de entrega se realiará en  [ENTREGA.md](./ENTREGA.md)
+
 
 ## Descripción del ejercicio
+
+Aplicación de consola para procesar ficheros de alumnado y automatizar la creación de correos internos y la asignación de grupos del instituto.
 
 Cada alumno entrega un fichero de texto con nombre igual a la parte local de su correo de la Junta de Andalucía, por ejemplo `eferoli398.txt`. Ese fichero incluye:
 
@@ -16,7 +19,7 @@ Ejemplo de fichero de entrada:
 ```text
 Nombre: Jon
 Apellidos: Solido Derret
-email: jSolDer398@g.educaand.es
+email: jsolder398@g.educaand.es
 Grupo = A
 ```
 
@@ -202,7 +205,7 @@ Este ejercicio está orientado a evaluar resultados de aprendizaje relacionados 
 ## Entrega
 El ejercicio se entregará a través de un repositorio de GitHub. El repositorio debe incluir: 
 - El código fuente de la aplicación, que debe ser funcional.
-- RESULTADO.md con:
+- ENTREGA.md con:
    - las respuestas a las preguntas de evaluación, usando enlaces permanente al código utilizado para responder las preguntas de evaluación.
    - Ejemplos de ejecución
    - Ejemplos a los ficheros de salida tras ejecutar tu programa.
