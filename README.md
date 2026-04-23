@@ -1,4 +1,4 @@
-# Acti
+# Actividad unidad 7: Entrada y salida. Lectura y escritura de datos desde consola y ficheros
 
 > Toda la documentación de entrega se realiará en  [ENTREGA.md](./ENTREGA.md)
 
