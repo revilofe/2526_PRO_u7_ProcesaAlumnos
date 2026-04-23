@@ -203,9 +203,25 @@ Este ejercicio está orientado a evaluar resultados de aprendizaje relacionados 
 
 
 ## Entrega
-El ejercicio se entregará a través de un repositorio de GitHub. El repositorio debe incluir: 
+
+El ejercicio se entregará a través de un repositorio de GitHub. El repositorio debe incluir:
+
 - El código fuente de la aplicación, que debe ser funcional.
-- ENTREGA.md con:
-   - las respuestas a las preguntas de evaluación, usando enlaces permanente al código utilizado para responder las preguntas de evaluación.
-   - Ejemplos de ejecución
-   - Ejemplos a los ficheros de salida tras ejecutar tu programa.
+- `ENTREGA.md` con:
+    - Las respuestas a las preguntas de evaluación, usando enlaces permanentes al código utilizado para responder las preguntas de evaluación.
+    - Ejemplos de ejecución.
+    - Ejemplos a los ficheros de salida tras ejecutar tu programa.
+
+### Comprobación obligatoria de enlaces e imágenes
+
+Es muy importante comprobar la entrega directamente en GitHub después de hacer `commit` y `push`.
+
+Antes de entregar, revisa que:
+
+- Todos los enlaces permanentes a fragmentos de código abren el fichero correcto y las líneas exactas usadas como evidencia.
+- Los enlaces permanentes usan una URL asociada a un commit concreto, no a una rama como `main` o `master`.
+- Todas las imágenes incluidas en `README.md` o `ENTREGA.md` se ven correctamente desde GitHub.
+- No hay enlaces a rutas locales del ordenador, como `C:\...`, `/home/...` o imágenes que solo existen fuera del repositorio.
+
+Puedes consultar la documentación oficial de GitHub sobre cómo crear enlaces permanentes a código en:
+[Crear un enlace permanente a un fragmento de código](https://docs.github.com/en/github/managing-your-work-on-github/creating-a-permanent-link-to-a-code-snippet).

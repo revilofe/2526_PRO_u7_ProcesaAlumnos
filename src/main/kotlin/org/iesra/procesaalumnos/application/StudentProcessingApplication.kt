@@ -26,7 +26,7 @@ class StudentProcessingApplication {
         // A partir de aquí, una solución OO razonable podría seguir este flujo.
         // En esta rama base no se implementa todavía: solo se deja la guía.
 
-        // ## Lectura de datos, conversión a estructuras
+        // ####################### Entrada: Lectura de datos, conversión a estructuras
 
         // 1. Pedir a una clase repositorio que localice los `.txt` de entrada.
         // val inputFiles = studentFileRepository.findInputFiles(options.path)
@@ -51,7 +51,7 @@ class StudentProcessingApplication {
 
         // }
 
-        // ## Procesamiento de datos de entrada, y generación de datos de salida
+        // ####################### Procesamiento: de datos de entrada, y generación de datos de salida
 
         // 7. Para cada Student, delegar la generación del correo del instituto a otra clase.
         // val institutionalEmail = emailGenerator.generate(student)
@@ -59,13 +59,12 @@ class StudentProcessingApplication {
         // 8. Para cada Student, delegar la asignación de grupos a una clase especializada.
         // val assignment = groupAssigner.assign(student, currentGroups)
 
-        // ## Generar ficheros de salida
+        // ####################### Salida: ficheros de salida y resumen
 
         // 9. Delegar la escritura de ficheros de salida a un escritor.
         // outputWriter.writeEmails(...)
         // outputWriter.writeGroups(...)
 
-        // ## Generar resumen
 
         // 10. Finalmente, construir un resumen y mostrarlo por consola.
         // val summary = ProcessingSummary(...)
