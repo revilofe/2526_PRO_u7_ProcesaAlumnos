@@ -26,11 +26,13 @@ Grupo = A
 El programa debe leer todos los ficheros del directorio indicado y realizar este procesamiento:
 
 1. Generar un nuevo correo del instituto con el formato:
-   `primera letra del nombre + segundo apellido + segunda letra del segundo apellido + @iesrafaelalberti.es`
+   `nombre + primera letra del primer apellido + primera letra del segundo apellido + @iesrafaelalberti.es`
+   Si hay apellidos compuestos, se usarán las primeras letras de cada parte, por ejemplo:
+   - `Antonio Martinez López Pérez` → `antoniomlp`
+   - `Juan García de la Vega Saborio` → `juangdlvs`
 2. Guardar los datos de correo en un fichero CSV por grupo del ciclo (`DAW1`, `DAW2`, ...) con nombre `<grupo>-correos.csv`, ej, para DAW1: `DAW1-correos.csv`.
-3. Asignar a cada alumno el grupo de clase (`A`, `B`, `C`, ...) solicitado siempre que sea válido y no esté completo.
-4. Si un alumno no indica grupo de clase o el grupo solicitado está lleno, asignarlo aleatoriamente a otro grupo disponible o generar uno nuevo siguiendo las letras del abecedario.
-5. Limitar cada grupo de clase a un máximo de 5 integrantes.
+3. Asignar a cada alumno el grupo de clase (`A`, `B`, `C`, ...)  solicitado siempre que no esté completo (Limitar cada grupo de clase a un máximo de 5 integrantes).
+4. Si el grupo solicitado está lleno, asignarlo por orden alfabético al siguiente grupo disponible o generar uno nuevo siguiendo las letras del abecedario.
 6. Generar un fichero `<grupo>-grupos.txt` con la composición final de los grupos, por ejemplo `DAW1-grupos.txt`.
 7. Mover cada fichero procesado a una carpeta llamada `procesados`.
 8. Mostrar por salida estándar un resumen del procesamiento.
@@ -62,8 +64,7 @@ flowchart TD
 
 ## Descripción del comando
 
-El programa se llamará `procesa-alumnos` y se ejecuta desde línea de comandos y acepta estas opciones:
-
+El programa se llamará `procesa-alumnos` y se ejecuta desde línea de comandos y acepta estas opciones: 
 - `--grupo <NOMBRE>`: obligatorio. Indica el identificador general del curso o clase, por ejemplo `DAW1`.
 - `--path <RUTA>`: opcional. Indica la carpeta donde están los ficheros de entrada. Si no se informa, se usa el directorio de trabajo actual.
 
@@ -111,14 +112,14 @@ email: mlopez123@g.educaand.es
 Grupo = B
 ```
 
-### Ejemplo 3: alumno sin grupo válido
+### Ejemplo 3: alumno sin grupo válido. Error!!
 
-Archivo: `jruiz777.txt`
+Archivo: `jruigom777.txt`
 
 ```text
 Nombre: Javier
-Apellidos: Ruiz Gómez
-email: jruiz777@g.educaand.es
+Apellidos: Ruiz Gómez de la Serna
+email: jruigom777@g.educaand.es
 Grupo =
 ```
 
@@ -130,9 +131,9 @@ Archivo: `DAW1-correos.csv`
 
 ```text
 nombre|apellidos|email1|email2
-Jon|Solido Derret|jsolder398@g.educaand.es|jderrete@iesrafaelalberti.es
-Marta|López Pérez|mlopez123@g.educaand.es|mpereze@iesrafaelalberti.es
-Javier|Ruiz Gómez|jruiz777@g.educaand.es|jgomezo@iesrafaelalberti.es
+Jon|Solido Derret|jsolder398@g.educaand.es|jonsd@iesrafaelalberti.es
+Marta|López Pérez|mlopez123@g.educaand.es|martalp@iesrafaelalberti.es
+Javier|Ruiz Gómez de la Serna|jruigom777@g.educaand.es|javiergdls@iesrafaelalberti.es
 ```
 
 ### Fichero de grupos
@@ -148,9 +149,6 @@ Archivo: `DAW1-grupos.txt`
 [Grupo-B]
 - Marta López Pérez
 - Ana Romero Castillo
-
-[Grupo-C]
-- Javier Ruiz Gómez
 ```
 
 ## Resumen esperado por salida estándar
@@ -169,7 +167,7 @@ Resumen de grupos:
 - Grupo-D: 4 alumnos
 
 Incidencias:
-- archivo jruiz777.txt: grupo no informado, asignado aleatoriamente a C
+- archivo jruigom777.txt: grupo no informado, error en formato y queda sin asignar a grupo.
 ```
 
 ## Información importante
@@ -177,21 +175,11 @@ Incidencias:
 - Cada fichero debe contener los cuatro datos requeridos.
 - Si un fichero tiene errores de formato, debe informarse en el resumen final.
 - Los grupos tienen un máximo de 5 alumnos.
-- La asignación aleatoria solo debe hacerse primero entre grupos con plazas disponibles, luego seguir el orden del abecedario, empezando por `A`, `B`, `C`, ...
+- La asignación por orden alfabética debe empezar desde `A` hasta `Z`, asignalo al primero con menos de 5 alumnos. 
 - Tras procesar cada fichero, este debe moverse al directorio `procesados`.
 - El directorio `procesados` debe crearse automáticamente si no existe.
 - El separador del CSV será `|`.
 
-## Objetivo de aprendizaje evaluado
-
-Este ejercicio está orientado a evaluar resultados de aprendizaje relacionados con:
-
-- Lectura de datos desde ficheros de texto.
-- Escritura de ficheros de salida en formato texto y CSV.
-- Procesamiento de datos desde línea de comandos.
-- Gestión de rutas y directorios.
-- Movimiento de ficheros una vez procesados.
-- Comunicación de resultados e incidencias por salida estándar.
 
 ## Preguntas: COMPLEMENTA LAS PREGUNTAS CON ENLACES A CÓDIGO, UTILIZANDO ENLACES PERMANENTES DE GITHUB.
 
