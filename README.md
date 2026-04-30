@@ -183,12 +183,35 @@ Incidencias:
 
 ## Preguntas: COMPLEMENTA LAS PREGUNTAS CON ENLACES A CÓDIGO, UTILIZANDO ENLACES PERMANENTES DE GITHUB.
 
-[CE 5.a] 1.a. Describe cómo se ha implementado la lectura de datos desde la consola y la escritura de resultados por consola. Pon ejemplos de código (enlace permanente al código en GitHub).   
-[CE 5.b] 2.a. Describe cómo se ha implementado la visualización de la información por consola ¿como le has dado formato.? Pon ejemplos de código (enlace permanente al código en GitHub).   
-[CE 5.c] 3.a ¿Que librería/clases has utilizado para realizar la práctica? Comenta los métodos mas interesantes     
-[CE 5.d] 4.a ¿Que formato le has utilizado en los ficheros de entrda y salida recuperar y guardar la información respectivamente? 4.b ¿Que facilidades te ha dado tener un determinado  formato adaptado? 4.c ¿Cómo se gestionan los errores? Pon ejemplos de código (enlace permanente al código en GitHub).    
-[CE 5.e] 5.a Describe la forma de acceso para leer información 6.b Describe la forma de acceso para escribir información 6.c Describe la forma de acceso para actualizar información. Pon ejemplos de código (enlace permanente al código en GitHub).    
+## Preguntas: COMPLEMENTA LAS RESPUESTAS CON ENLACES PERMANENTES DE GITHUB
 
+> [CE 5.a] 1.a. Muestra cómo tu programa recibe y utiliza los argumentos `--grupo` y `--path`.  
+Incluye:
+- Enlace permanente al código donde se procesan los argumentos, breve explicaión. 
+- Ejemplo de ejecución real (comando + salida por consola)
+
+> [CE 5.b] 2.a. Muestra la salida completa por consola tras procesar varios ficheros.  
+Explica brevemente y no olvides enlaces permanente al código:
+- Qué información muestras  
+- Cómo has estructurado el formato para que sea legible
+
+> [CE 5.c] 3.a. Indica qué clases o métodos has utilizado para trabajar con ficheros y por qué las has elegido.  
+Incluye:
+- Enlace permanente al código donde se utilizan  
+- Ejemplo concreto de uso dentro de tu programa
+
+> [CE 5.d] 4.a. Muestra cómo interpretas el formato del fichero de entrada y cómo validas que sea correcto.  
+Incluye:
+- Enlace permanente al código de lectura/validación  
+- Un ejemplo de fichero correcto  
+- Un ejemplo de error detectado por tu programa y cómo se gestiona. , Salida notifiandolo.
+
+> [CE 5.e] 5.a. Breve comentario sobre tu codigo (añade enalce permanente), acerca de cómo realizas:
+- Lectura de ficheros  
+- Escritura de resultados (CSV/TXT)  
+- Movimiento de ficheros a la carpeta `procesados`  
+
+Incluye un enlace permanente a cada caso y una breve explicación.
 
 ## Entrega
 
