@@ -183,11 +183,11 @@ Incidencias:
 
 ## Preguntas: COMPLEMENTA LAS PREGUNTAS CON ENLACES A CÓDIGO, UTILIZANDO ENLACES PERMANENTES DE GITHUB.
 
-[CE 7.a] 1.a. Describe cómo se ha implementado la lectura de datos desde la consola y la escritura de resultados por consola. Pon ejemplos de código (enlace permanente al código en GitHub).   
-[CE 7.b] 2.a. Describe cómo se ha implementado la visualización de la información por consola ¿como le has dado formato.? Pon ejemplos de código (enlace permanente al código en GitHub).   
-[CE 7.c] 3.a ¿Que librería/clases has utilizado para realizar la práctica? Comenta los métodos mas interesantes     
-[CE 7.d] 4.a ¿Que formato le has utilizado en los ficheros de entrda y salida recuperar y guardar la información respectivamente? 4.b ¿Que facilidades te ha dado tener un determinado  formato adaptado? 4.c ¿Cómo se gestionan los errores? Pon ejemplos de código (enlace permanente al código en GitHub).    
-[CE 7.e] 5.a Describe la forma de acceso para leer información 6.b Describe la forma de acceso para escribir información 6.c Describe la forma de acceso para actualizar información. Pon ejemplos de código (enlace permanente al código en GitHub).    
+[CE 5.a] 1.a. Describe cómo se ha implementado la lectura de datos desde la consola y la escritura de resultados por consola. Pon ejemplos de código (enlace permanente al código en GitHub).   
+[CE 5.b] 2.a. Describe cómo se ha implementado la visualización de la información por consola ¿como le has dado formato.? Pon ejemplos de código (enlace permanente al código en GitHub).   
+[CE 5.c] 3.a ¿Que librería/clases has utilizado para realizar la práctica? Comenta los métodos mas interesantes     
+[CE 5.d] 4.a ¿Que formato le has utilizado en los ficheros de entrda y salida recuperar y guardar la información respectivamente? 4.b ¿Que facilidades te ha dado tener un determinado  formato adaptado? 4.c ¿Cómo se gestionan los errores? Pon ejemplos de código (enlace permanente al código en GitHub).    
+[CE 5.e] 5.a Describe la forma de acceso para leer información 6.b Describe la forma de acceso para escribir información 6.c Describe la forma de acceso para actualizar información. Pon ejemplos de código (enlace permanente al código en GitHub).    
 
 
 ## Entrega
