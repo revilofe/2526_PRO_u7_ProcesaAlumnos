@@ -187,26 +187,27 @@ Incidencias:
 
 > [CE 5.a] 1.a. Muestra cómo tu programa recibe y utiliza los argumentos `--grupo` y `--path`.  
 Incluye:
-- Enlace permanente al código donde se procesan los argumentos, breve explicaión. 
+- Enlace permanente al código donde se procesan los argumentos
+- Breve explicación.
 - Ejemplo de ejecución real (comando + salida por consola)
 
 > [CE 5.b] 2.a. Muestra la salida completa por consola tras procesar varios ficheros.  
 Explica brevemente y no olvides enlaces permanente al código:
-- Qué información muestras  
+- Qué información muestras: Ejemplo de ejecución real (comando + salida por consola)
 - Cómo has estructurado el formato para que sea legible
 
 > [CE 5.c] 3.a. Indica qué clases o métodos has utilizado para trabajar con ficheros y por qué las has elegido.  
 Incluye:
-- Enlace permanente al código donde se utilizan  
-- Ejemplo concreto de uso dentro de tu programa
+- Enlace permanente al código donde se ejemplifica su uso  
+- Descripción del código anterior. Porque usas esas y no otras.
 
 > [CE 5.d] 4.a. Muestra cómo interpretas el formato del fichero de entrada y cómo validas que sea correcto.  
 Incluye:
 - Enlace permanente al código de lectura/validación  
-- Un ejemplo de fichero correcto  
-- Un ejemplo de error detectado por tu programa y cómo se gestiona. , Salida notifiandolo.
+- Descripción del código anterior. Explica cómo validas el formato y qué errores detectas.
+- Un ejemplo de error detectado por tu programa y cómo se gestiona. Salida notificándo el error.
 
-> [CE 5.e] 5.a. Breve comentario sobre tu codigo (añade enalce permanente), acerca de cómo realizas:
+> [CE 5.e] 5.a. Breve comentario sobre tu código (añade enlace permanente), acerca de cómo realizas:
 - Lectura de ficheros  
 - Escritura de resultados (CSV/TXT)  
 - Movimiento de ficheros a la carpeta `procesados`  
